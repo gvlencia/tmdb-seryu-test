@@ -7,7 +7,6 @@ export const fetchNowPlaying = async({ language, page } = {}) => {
     });
 
     const res = await fetch(`https://api.themoviedb.org/3/movie/now_playing?${params.toString()}`, {
-        method: 'GET',
         headers: {
             accept: 'application/json',
             Authorization: `Bearer ${TMDB_TOKEN}`,
