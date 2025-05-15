@@ -10,7 +10,7 @@ const TMDBLoginModal = ({ show }: TMDBLoginModalProps) => {
     const token = await getRequestToken()
     if (token) {
       localStorage.setItem('tmdb_request_token', token)
-      window.location.href = `https://www.themoviedb.org/authenticate/${token}?redirect_to=http://localhost:3000/auth`
+      window.location.href = `https://www.themoviedb.org/authenticate/${token}?redirect_to=https://tmdb-seryu-test.vercel.app/auth`
     }
   }
 
