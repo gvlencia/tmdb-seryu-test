@@ -1,0 +1,53 @@
+.movie-card {
+    background-color: #050E12;
+    border-radius: 6px;
+    overflow: hidden;
+    width: 193px;
+    margin: 10px;
+    color: white;
+    font-family: sans-serif;
+}
+
+@media (max-width: 640px) {
+    .movie-card {
+        width: 160px;
+    }
+}
+
+.movie-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.movie-info {
+    padding: 10px;
+}
+
+.movie-info h4 {
+    font-size: 14px;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.movie-info p {
+    font-size: 12px;
+    color: #bbb;
+    margin-top: 4px;
+}
+
+.movie-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0;
+    /* font-family: 'Inter, sans-serif'; */
+    color: #B6B6B6;
+}
+
+.movie-year {
+    font-size: 12px;
+    color: #828282;
+    margin-top: 4px;
+}

@@ -1,0 +1,22 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #48a8e2;
+    padding: 10px 40px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+.logo {
+    font-weight: 900;
+    font-size: 40px;
+    letter-spacing: 5px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    margin-left: 30px;
+    font-size: 18px;
+}
