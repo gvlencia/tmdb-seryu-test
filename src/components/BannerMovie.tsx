@@ -1,5 +1,4 @@
 import React from 'react';
-// import { FaHeart, FaRegBookmark } from "react-icons/fa";
 import ButtonFav from './ButtonFav';
 import ButtonWatch from './ButtonWatchList';
 

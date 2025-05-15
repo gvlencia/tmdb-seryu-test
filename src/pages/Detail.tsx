@@ -1,21 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import BannerMovie from '../components/BannerMovie';
 import HorizontalScrollsection from '../components/HorizontalScrollSection';
 import { fetchDetailMovie, fetchRecommendationMovie } from '../services/movieApi';
-
-// const moviesData = [
-//     { title: 'Bliss', year: '2021', posterUrl: '/images/movie1.png' },
-//     { title: 'Malcolm & Marie Malcolm & Marie', year: '2021', posterUrl: '/images/movie2.png' },
-//     { title: 'Dune', year: '2021', posterUrl: '/images/movie3.png' },
-//     { title: 'Bliss', year: '2021', posterUrl: '/images/movie1.png' },
-//     { title: 'Malcolm & Marie', year: '2021', posterUrl: '/images/movie2.png' },
-//     { title: 'Dune', year: '2021', posterUrl: '/images/movie3.png' },
-//     { title: 'Bliss', year: '2021', posterUrl: '/images/movie1.png' },
-//     { title: 'Malcolm & Marie', year: '2021', posterUrl: '/images/movie2.png' },
-//     { title: 'Dune', year: '2021', posterUrl: '/images/movie3.png' },
-//   ];
 
 const Detail = () => {
     const { id } = useParams();

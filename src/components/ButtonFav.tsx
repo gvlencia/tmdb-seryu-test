@@ -1,12 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { addFavoriteMovie } from '../services/movieApi';
+import TMDBLoginModal from './TMDBLoginModal'; 
 
 interface ButtonFavProps {
   id: number;
 }
 
 const ButtonFav: React.FC<ButtonFavProps> = ({ id }) => {
+  const [showLoginModal, setShowLoginModal] = useState(false);
     const handleFavorite = async(id: number) => {
+      const session_id = localStorage.getItem('tmdb_session_id');
+
+      if (!session_id) {
+        setShowLoginModal(true);
+        return;
+      }
+      
         try {
           const response = await addFavoriteMovie({
             account_id: localStorage.getItem('tmdb_account_id'),         
@@ -22,6 +31,7 @@ const ButtonFav: React.FC<ButtonFavProps> = ({ id }) => {
       };
 
     return (
+      <>
         <button
           onClick={() => handleFavorite(id)}
           className="bg-black/50 text-white p-1 rounded-full hover:bg-white/80 hover:text-black transition cursor-pointer"
@@ -31,6 +41,9 @@ const ButtonFav: React.FC<ButtonFavProps> = ({ id }) => {
           </svg>
 
         </button>
+       <TMDBLoginModal show={showLoginModal} />
+      </>
+        
     )
 };
 

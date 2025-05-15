@@ -1,20 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import SectionCard from '../components/SectionCard';
 import HorizontalScrollsection from '../components/HorizontalScrollSection';
 import { fetchNowPlaying, fetchTopRated } from '../services/movieApi';
-
-const moviesData = [
-    { title: 'Bliss', year: '2021', posterUrl: '/images/movie1.png' },
-    { title: 'Malcolm & Marie Malcolm & Marie', year: '2021', posterUrl: '/images/movie2.png' },
-    { title: 'Dune', year: '2021', posterUrl: '/images/movie3.png' },
-    { title: 'Bliss', year: '2021', posterUrl: '/images/movie1.png' },
-    { title: 'Malcolm & Marie', year: '2021', posterUrl: '/images/movie2.png' },
-    { title: 'Dune', year: '2021', posterUrl: '/images/movie3.png' },
-    { title: 'Bliss', year: '2021', posterUrl: '/images/movie1.png' },
-    { title: 'Malcolm & Marie', year: '2021', posterUrl: '/images/movie2.png' },
-    { title: 'Dune', year: '2021', posterUrl: '/images/movie3.png' },
-  ];
 
 const Home = () => {
   const [nowPlaying, setNowPlaying] = useState<{ id:number, title: any; year: string; posterUrl: string; }[]>([]);

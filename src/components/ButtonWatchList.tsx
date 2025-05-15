@@ -1,12 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { addWatchMovie } from '../services/movieApi';
+import TMDBLoginModal from './TMDBLoginModal'; 
 
 interface ButtonWatchProps {
   id: number;
 }
 
 const ButtonWatch: React.FC<ButtonWatchProps> = ({ id }) => {
+  const [showLoginModal, setShowLoginModal] = useState(false);
+
     const handleWatchlist = async(id: number) => {
+      const session_id = localStorage.getItem('tmdb_session_id');
+
+      if (!session_id) {
+        setShowLoginModal(true);
+        return;
+      }
+
         try {
           const response = await addWatchMovie({
             account_id: localStorage.getItem('tmdb_account_id'),         
@@ -22,6 +32,7 @@ const ButtonWatch: React.FC<ButtonWatchProps> = ({ id }) => {
       };
 
     return (
+      <>
         <button
           onClick={() => handleWatchlist(id)}
           className="bg-black/50 text-white p-1 rounded-full hover:bg-white/80 hover:text-black transition cursor-pointer"
@@ -31,6 +42,9 @@ const ButtonWatch: React.FC<ButtonWatchProps> = ({ id }) => {
           </svg>
 
         </button>
+        <TMDBLoginModal show={showLoginModal} />
+      </>
+        
     )
 };
 

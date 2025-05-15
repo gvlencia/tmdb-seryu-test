@@ -1,20 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 
 import SectionCard from '../components/SectionCard';
 import { fetchWathcListMovie } from '../services/movieApi';
-
-const moviesData = [
-    { id: 1, title: 'Bliss', year: '2021', posterUrl: '/images/movie1.png' },
-    { id: 1,title: 'Malcolm & Marie Malcolm & Marie', year: '2021', posterUrl: '/images/movie2.png' },
-    { id: 1, title: 'Dune', year: '2021', posterUrl: '/images/movie3.png' },
-    { id: 1, title: 'Bliss', year: '2021', posterUrl: '/images/movie1.png' },
-    { id: 1, title: 'Malcolm & Marie', year: '2021', posterUrl: '/images/movie2.png' },
-    { id: 1, title: 'Dune', year: '2021', posterUrl: '/images/movie3.png' },
-    { id: 1, title: 'Bliss', year: '2021', posterUrl: '/images/movie1.png' },
-    { id: 1, title: 'Malcolm & Marie', year: '2021', posterUrl: '/images/movie2.png' },
-    { id: 1, title: 'Dune', year: '2021', posterUrl: '/images/movie3.png' },
-  ];
 
 const WatchList = () => {
     const [watchListMovies, setWatchListMovies] = useState<{ id:number, title: any; year: string; posterUrl: string; }[]>([]);
