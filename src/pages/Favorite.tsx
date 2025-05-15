@@ -4,7 +4,7 @@ import SectionCard from '../components/SectionCard';
 import { fetchFavoriteMovie } from '../services/movieApi';
 
 const Favorite = () => {
-    const [favoriteMovies, setFavoriteMovies] = useState<{ id:number, title: any; year: string; posterUrl: string; }[]>([]);
+    const [favoriteMovies, setFavoriteMovies] = useState<{ id:number, title: any; year: string; posterUrl: string; isFavorite?: boolean; }[]>([]);
 
     useEffect(() => {
         const loadFavoriteMovies = async () => {
@@ -16,6 +16,7 @@ const Favorite = () => {
                         title: movie.title,
                         year: movie.release_date?.split('-')[0],
                         posterUrl: `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
+                        isFavorite: true,
                     }));
 
                 setFavoriteMovies(formatMovies(favoriteMoviesData));

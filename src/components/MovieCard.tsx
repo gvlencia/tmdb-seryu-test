@@ -11,9 +11,11 @@ interface MovieCardProps {
   title: string;
   year: string;
   image: string;
+  isFavorite?: boolean;
+  isWatchlist?: boolean;
 }
 
-const MovieCard: React.FC<MovieCardProps> = ({ id, title, year, image }) => {
+const MovieCard: React.FC<MovieCardProps> = ({ id, title, year, image, isFavorite, isWatchlist }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
@@ -39,8 +41,8 @@ const MovieCard: React.FC<MovieCardProps> = ({ id, title, year, image }) => {
     <div className="movie-card relative group " >
       <img src={image} alt={title} />
       <div className="absolute bottom-20 right-2 flex gap-2 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        <ButtonFav id={id} />
-        <ButtonWatch id={id} />
+        <ButtonFav id={id} isFavorite={isFavorite}/>
+        <ButtonWatch id={id} isWatchlist={isWatchlist}/>
       </div>
       <div className="movie-info cursor-pointer" onClick={handleClick}>
         <h4 className='movie-title truncate'>{title}</h4>

@@ -8,6 +8,8 @@ interface Movie {
   title: string;
   year: string;
   posterUrl: string;
+  isFavorite?: boolean;
+  isWatchlist?: boolean;
 }
 
 interface WatchlistProps {
@@ -27,6 +29,8 @@ const Watchlist: React.FC<WatchlistProps> = ({ title, movies }) => {
             title={movie.title}
             year={movie.year}
             image={movie.posterUrl}
+            isFavorite={movie.isFavorite}
+            isWatchlist={movie.isWatchlist}
           />
         ))}
       </div>

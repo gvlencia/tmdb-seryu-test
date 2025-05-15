@@ -4,7 +4,7 @@ import SectionCard from '../components/SectionCard';
 import { fetchWathcListMovie } from '../services/movieApi';
 
 const WatchList = () => {
-    const [watchListMovies, setWatchListMovies] = useState<{ id:number, title: any; year: string; posterUrl: string; }[]>([]);
+    const [watchListMovies, setWatchListMovies] = useState<{ id:number, title: any; year: string; posterUrl: string; isWatchlist: boolean }[]>([]);
 
     useEffect(() => {
         const loadWatchListMovies = async () => {
@@ -16,6 +16,7 @@ const WatchList = () => {
                         title: movie.title,
                         year: movie.release_date?.split('-')[0],
                         posterUrl: `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
+                        isWatchlist: true,
                     }));
 
                 setWatchListMovies(formatMovies(watchListMoviesData));
